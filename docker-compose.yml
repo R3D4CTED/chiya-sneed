@@ -2,7 +2,7 @@ version: "3.7"
 services:
   chiya:
     container_name: chiya
-    image: ghcr.io/snaacky/chiya:latest
+    build: .
     restart: unless-stopped
     volumes:
         - ./config/config.yml:/app/config.yml

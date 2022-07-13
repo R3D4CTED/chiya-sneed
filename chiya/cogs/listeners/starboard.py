@@ -31,14 +31,15 @@ class Starboard(commands.Cog):
         return discord.Color.from_hsv(48 / 360, saturation, 1).value
 
     def generate_star(self, star_count: int) -> str:
-        if star_count <= 4:
-            return "⭐"
-        elif 5 <= star_count <= 9:
-            return "🌟"
-        elif 10 <= star_count <= 24:
-            return "💫"
-        else:
-            return "✨"
+        # if star_count <= 4:
+        #     return "⭐"
+        # elif 5 <= star_count <= 9:
+        #     return "🌟"
+        # elif 10 <= star_count <= 24:
+        #     return "💫"
+        # else:
+        #     return "✨"
+        return "😂"
 
     async def get_star_count(self, message: discord.Message, stars: tuple) -> int:
         unique_users = set()
@@ -59,7 +60,8 @@ class Starboard(commands.Cog):
         Implements a "cache" to prevent race condition where if multiple stars were reacted on a message after it hit the
         star threshold and the IDs were not written to the database quickly enough, a duplicated star embed would be sent.
         """
-        stars = ("⭐", "🌟", "💫", "✨")
+        #stars = ("⭐", "🌟", "💫", "✨")
+        stars = ("😂")
         if payload.emoji.name not in stars:
             return
 
@@ -142,7 +144,8 @@ class Starboard(commands.Cog):
         """
         Update the star count in the embed if the stars were reacted. Delete star embed if the star count is below threshold.
         """
-        stars = ("⭐", "🌟", "💫", "✨")
+        # stars = ("⭐", "🌟", "💫", "✨")
+        stars = ("😂")
         if payload.emoji.name not in stars:
             return
 
