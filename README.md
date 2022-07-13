@@ -18,7 +18,7 @@ You will also need a Discord bot with [privileged intents](https://discordpy.rea
 
 ## Install
 
-**Step 1:** Clone the repository
+**Step 1:** Clone the repository.
 
 **Step 2:** Copy `config.default.yml` to `config.yml`, fill up the uncommented lines.
 
