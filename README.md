@@ -18,40 +18,10 @@ You will also need a Discord bot with [privileged intents](https://discordpy.rea
 
 ## Install
 
-**Step 1:** Download the `docker-compose.yml` to your local file system.
-
-**Step 2:** Create a `.env` file in the same folder and fill out the following:
-
-```env
-# The bot token for the Discord application
-# https://discordapp.com/developers/
-BOT_TOKEN=
-
-# The client ID and secret for the Reddit application
-# https://www.reddit.com/prefs/apps/
-REDDIT_CLIENT_ID=
-REDDIT_CLIENT_SECRET=
-
-# The authentication settings for the database
-MYSQL_HOST=
-MYSQL_DB=
-MYSQL_USER=
-MYSQL_PASSWORD=
-MYSQL_ROOT_PASSWORD=
-
-# The path on your host file system to config.yml
-CONFIG=
-
-# The folder on your host file system for storing database data
-DATABASE_FOLDER=
-
-# The folder on your host file system for storing logs
-LOGS_FOLDER=
-```
-
-**Step 3:** Create a `config.yml` file in the same folder using `config.default.yml` as the base and fill it out.
-
-**Step 4:** Pull the Docker image and start the containers by running `docker-compose up -d` in the same folder.
+**Step 1:** Clone the repository
+**Step 2:** Copy `config.default.yml` to `config.yml`, fill up the uncommented lines.
+**Step 3:** Create a folder called `config` inside the repository, drop `config.yml` there
+**Step 4:** Run `docker compose up --build -d` on the root directory of the repository, and your bot should be up and running now.
 
 ## Contributing
 
