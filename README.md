@@ -18,9 +18,9 @@ You will also need a Discord bot with [privileged intents](https://discordpy.rea
 
 ## Install
 
-**Step 1:** Clone the repository
-**Step 2:** Copy `config.default.yml` to `config.yml`, fill up the uncommented lines.
-**Step 3:** Create a folder called `config` inside the repository, drop `config.yml` there
+**Step 1:** Clone the repository\n
+**Step 2:** Copy `config.default.yml` to `config.yml`, fill up the uncommented lines.\n
+**Step 3:** Create a folder called `config` inside the repository, drop `config.yml` there.\n
 **Step 4:** Run `docker compose up --build -d` on the root directory of the repository, and your bot should be up and running now.
 
 ## Contributing
