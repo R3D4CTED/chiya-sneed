@@ -70,9 +70,9 @@ class Starboard(commands.Cog):
         star_count = await self.get_star_count(message, stars)
 
         if (
-            message.author.bot
-            or message.author.id == payload.member.id
-            or channel.is_nsfw()
+            # message.author.bot
+            message.author.id == payload.member.id
+            # or channel.is_nsfw()
             or payload.channel_id in config["channels"]["starboard"]["blacklisted"]
             or star_count < config["channels"]["starboard"]["star_limit"]
             or (payload.message_id, payload.channel_id) in self.cache
