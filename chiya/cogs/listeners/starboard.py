@@ -81,7 +81,8 @@ class Starboard(commands.Cog):
 
         self.cache.append((payload.channel_id, payload.message_id))
 
-        starboard_channel = discord.utils.get(message.guild.channels, id=config["channels"]["starboard"]["channel_id"])
+        starboard_channel = await self.bot.fetch_channel(config["channels"]["starboard"]["channel_id"])
+        #starboard_channel = discord.utils.get(message.guild.channels, id=config["channels"]["starboard"]["channel_id"])
 
         db = database.Database().get()
         result = db["starboard"].find_one(channel_id=payload.channel_id, message_id=payload.message_id)
@@ -158,8 +159,9 @@ class Starboard(commands.Cog):
             db.close()
             return
 
-        starboard_channel = discord.utils.get(message.guild.channels, id=config["channels"]["starboard"]["channel_id"])
-
+        # starboard_channel = discord.utils.get(message.guild.channels, id=config["channels"]["starboard"]["channel_id"])
+        starboard_channel = await self.bot.fetch_channel(config["channels"]["starboard"]["channel_id"])
+        
         try:
             star_embed = await starboard_channel.fetch_message(result["star_embed_id"])
         except discord.NotFound:
